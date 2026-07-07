@@ -13,7 +13,7 @@ function updateDils(diff) {
     };
     
     for (let i = 0; i < dilators.length; i++) {
-        dilators[i].mult = dilators[i].lastCompressMult * (1 + Math.sqrt(dilators[i].amount)) * Math.floor(1 + dilators[i].bought / 10);
+        dilators[i].mult = dilators[i].lastCompressMult * (1 + Math.sqrt(dilators[i].amount)) * Math.floor(1 + dilators[i].bought ** 2 / 10);
     };
     
     player.dilation += ((dilators[0].amount * dilators[0].mult) * diff) / GAIN_REDUCTION;
@@ -37,7 +37,7 @@ function compressDil(ind) {
     let dilator = dilators[ind];
 
     if (dilator.amount >= dilator.compressThreshold) {
-        dilator.lastCompressMult *= dilator.mult ** 1/10;
+        dilator.lastCompressMult *= dilator.mult ** 1/15;
         dilator.amount = 1;
         dilator.compressions++;
 
