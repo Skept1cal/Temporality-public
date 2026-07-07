@@ -1,0 +1,1 @@
+Everything following V0.2.0 is written in JS/HTML/CSS. V0.2.0 is written in Python.

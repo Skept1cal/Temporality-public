@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporality</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+    </style>
+</head>
+<body>
+    <div id="resources-div" class="resources-div">
+
+    </div>
+    <div class="overline">
+
+    </div>
+
+    <div id="save-btn" onclick="save_btn_pressed()">
+        <h2>Save</h2>
+    </div>
+    <div id="copy-save-btn" onclick="copySave()">
+        <h2>Copy save</h2>
+    </div>
+    <div id="load-save-btn" onclick="loadFromString()">
+        <h2>Load from clipboard</h2>
+    </div>
+    <div id="clear-save-btn" onclick="clearSave_btn_pressed()">
+        <h2>Clear save</h2>
+    </div>
+
+    <div id="max-all-btn" class="max-all" onclick="pre_m_maxall()">
+        <h2>Max all (M)</h2>
+    </div>
+    <div id="compress-all-btn" class="compress-all" onclick="pre_m_compressall()">
+        <h2>Compress all (C)</h2>
+    </div>
+    <div class="main-container">
+        <div id="buy1-buttons-div" class="buy1-buttons">
+
+        </div>
+        <div id="buymax-buttons-div" class="buymax-buttons">
+
+        </div>
+        <div id="dilator-costs-div" class="dilator-costs">
+
+        </div>
+        <div id="dilators-div" class="dilators">
+
+        </div>
+        <div id="dilator-amounts-div" class="dilator-amounts">
+
+        </div>
+        <div id="compress-buttons-div" class="compress-buttons">
+
+        </div>
+    </div>
+
+    <script src="../js/format.js"></script>
+    <script src="../js/objects.js"></script>
+    <script src="../js/pre_m.js"></script>
+    <script src="../html/setup.js"></script>
+    <script src="../css/conditionals.js"></script>
+    <script src="../html/update.js"></script>
+    <script src="../js/buymax.js"></script>
+    <script src="../js/save.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+body {
+    font-family: Roboto Mono, monospace;
+    font-weight: bold;
+
+    background-color: #000000;
+}
+
+
+
+.resources-div {
+    width: 50%;
+    
+    margin: -1vw auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    user-select: none;
+}
+
+.years-label {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    text-shadow: 1px 1px 3px white;
+
+    font-size: 1vw;
+}
+
+.dilation-label {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    text-shadow: 1px 1px 3px white;
+
+    position: absolute;
+    top: 2.25vw;
+
+    font-size: 0.75vw;
+}
+
+
+
+#save-btn {
+    background-color: rgb(31, 31, 31);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+
+    font-size: 0.6vw;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 1.75vw;
+    width: 8vw;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+#clear-save-btn {
+    background-color: rgb(31, 31, 31);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    right: 10vw;
+    top: 3.5vw;
+
+    font-size: 0.6vw;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 1.75vw;
+    width: 8vw;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+#copy-save-btn {
+    background-color: rgb(31, 31, 31);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    right: 1vw;
+    top: 3.5vw;
+
+    font-size: 0.6vw;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 1.75vw;
+    width: 8vw;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+#load-save-btn {
+    background-color: rgb(31, 31, 31);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    right: 10vw;
+    top: 1vw;
+
+    font-size: 0.6vw;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 1.75vw;
+    width: 12vw;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
+.overline { /*The line above the main container and stuff directly related to it, such as the max all button*/
+    width: 98vw;
+    height: 0%;
+    
+    position: absolute;
+    bottom: 33vw;
+    left: 1vw;
+
+    border: 1px solid white;
+    border-radius: 1px;
+}
+
+
+
+.main-container { /*Contains the dilators and all the related buttons*/
+    background-color: rgb(20, 20, 20);
+    color: black;
+
+    border: 4px solid rgb(31, 31, 31);
+    border-radius: 3px;
+
+    margin: auto -0.2vw;
+
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    bottom: 5px;
+
+    width: 99vw;
+    height: 31.5vw;
+
+}
+
+.buy1-buttons { /*Contains the buttons for buying singles*/
+    background-color: black;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    right: 10.5%;
+
+    height: 95%;
+    width: 10%;
+
+    border: 2px solid white;
+    border-radius: 3px;
+
+    border-right: 0px;
+
+    z-index: 1;
+}
+
+.buymax-buttons { /*Contains the buttons for buying max*/
+    background-color: black;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    right: 0.6%;
+
+    height: 95%;
+    width: 10%;
+
+    border: 2px solid white;
+    border-radius: 3px;
+
+    border-left: 0px;
+
+    z-index: 1;
+}
+
+.buy1-button, .buymax-button { /*These are the buttons for buying singles and buying max*/
+    background-color: rgb(31, 31, 31);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    font-size: 0.45vw;
+    text-align: center;
+    padding: 0.61vw;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 1.75%;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+
+    margin: 0.42vw;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.max-all {
+    background-color: rgb(31, 31, 31);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    right: 1vw;
+    bottom: 34vw;
+
+    font-size: 0.6vw;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 1.75vw;
+    width: 12vw;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.compress-all {
+    background-color: rgb(31, 31, 31);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    left: 1vw;
+    bottom: 34vw;
+
+    font-size: 0.6vw;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 1.75vw;
+    width: 12vw;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.buy1-button.disabled, .buymax-button.disabled, .compress-button.disabled, .max-all.disabled, .compress-all.disabled, #clear-save-btn.disabled, #load-save-btn.disabled {
+    background-color: rgb(53, 0, 0);
+    color: white;
+    cursor: default;
+
+    border: 2px solid rgb(117, 0, 0);
+
+    transition: 0.1s ease-out;
+}
+
+.buy1-button.enabled, .buymax-button.enabled, .compress-button.enabled, .max-all.enabled, .compress-all.enabled, #clear-save-btn.enabled, #load-save-btn.enabled {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    
+    cursor: pointer;
+
+    border: 2px solid rgb(78, 78, 78);
+
+    transition: 0.1s ease-out;
+}
+
+.buy1-button:hover, .buymax-button:hover, .compress-button:hover, .max-all:hover, .compress-all:hover, #save-btn:hover, #clear-save-btn:hover, #copy-save-btn:hover,
+#load-save-btn:hover {
+    filter: brightness(300%);
+    color: black;
+    text-shadow: 0.5px 0.5px 2px black;
+
+    transition: 0.1s ease-out;
+}
+
+
+.dilator-costs {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    right: 23.5%;
+
+    height: 95%;
+    width: 15%;
+
+    z-index: 0;
+}
+
+.dilator-cost-label {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    font-size: 0.6vw;
+    text-align: left;
+    padding: 0.61vw;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 2.1%;
+
+    margin: 0.485vw;
+
+    user-select: none;
+}
+
+
+
+.dilators { /*Contains the main labels for dilators*/
+    background-color: black;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    left: 10.5%;
+
+    height: 95%;
+    width: 17%;
+
+    border: 2px solid white;
+    border-radius: 3px;
+
+    border-left: 0px;
+
+    z-index: 0;
+}
+
+.dilator-label { /*Shows the dilator's number and multiplier*/
+    background-color: rgb(31, 31, 31);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    font-size: 0.6vw;
+    text-align: left;
+    padding: 0.61vw;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 1.75%;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+
+    margin: 0.42vw;
+
+    user-select: none;
+}
+
+
+
+.dilator-amounts { /*Contains the labels displaying the dilator amounts*/
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    left: 28%;
+
+    height: 95%;
+    width: 30%;
+
+    z-index: 0;
+}
+
+.dilator-amount-label { /*Displays the dilator's amount*/
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    font-size: 0.6vw;
+    text-align: left;
+    padding: 0.61vw;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 2.1%;
+
+    margin: 0.485vw;
+
+    user-select: none;
+}
+
+
+
+.compress-buttons { /*Contains the buttons for compression*/
+    background-color: black;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    left: 0.6%;
+
+    height: 95%;
+    width: 10%;
+
+    border: 2px solid white;
+    border-radius: 3px;
+
+    border-right: 0px;
+
+    z-index: 1;
+}
+
+.compress-button { /*Compresses the respective dilator, making it significantly stronger.*/
+    background-color: rgb(31, 31, 31);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    font-size: 0.6vw;
+    text-align: center;
+    padding: 0.61vw;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 1.75%;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+    margin: 0.42vw;
+
+    cursor: pointer;
+    user-select: none;
+}
