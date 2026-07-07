@@ -1,6 +1,6 @@
 function disp(x) {
 
-    if (x >= Number.MAX_VALUE || [Infinity, null, NaN, undefined].includes(player.years)) {return "Infinity"};
+    if (x >= Number.MAX_VALUE || [Infinity, null, NaN, undefined].includes(x) || player.years >= Number.MAX_VALUE || [Infinity, null, NaN, undefined].includes(player.years)) {return "Infinity"};
 
     if (x === 0) return "0.00";
 

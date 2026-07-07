@@ -1,9 +1,9 @@
 function saveGame() {
     const data = {
-        years: player.years,
+        years: player.years === Infinity ? Number.MAX_VALUE : player.years,
         dilation: player.dilation,
 
-        dilators: JSON.parse(JSON.stringify(dilators))
+        dilators: structuredClone(dilators)
     };
 
     const encoded = btoa(JSON.stringify(data));
@@ -16,7 +16,7 @@ function tob64() {
         years: player.years,
         dilation: player.dilation,
 
-        dilators: JSON.parse(JSON.stringify(dilators))
+        dilators: structuredClone(dilators)
     };
 
     const encoded = btoa(JSON.stringify(data));
@@ -25,34 +25,30 @@ function tob64() {
 }
 
 function loadSave(data=null) {
-    try {
-        if (data === null) {
-            const data_string = localStorage.getItem("temporality_save_file");
-            const decoded = JSON.parse(atob(data_string));
+    if (data === null) {
+        const data_string = localStorage.getItem("temporality_save_file");
+        const decoded = JSON.parse(atob(data_string));
 
-            if (decoded !== null) {
-                player.years = Number(decoded.years);
-                player.dilation = Number(decoded.dilation);
+        if (decoded !== null) {
+            player.years = Number(decoded.years);
+            player.dilation = Number(decoded.dilation);
 
-                for (let i = 0; i < dilators.length; i++) {
-                    dilators[i] = JSON.parse(JSON.stringify(decoded.dilators[i]));
-                };
-            };
-        } else {
-            const decoded = JSON.parse(atob(data));
-
-            if (decoded !== null) {
-                player.years = Number(decoded.years);
-                player.dilation = Number(decoded.dilation);
-
-                for (let i = 0; i < dilators.length; i++) {
-                    dilators[i] = JSON.parse(JSON.stringify(decoded.dilators[i]));
-                };
+            for (let i = 0; i < dilators.length; i++) {
+                dilators[i] = structuredClone(decoded.dilators[i]);
             };
         };
-    } catch (error) {
-        console.log("Failed to load save file.");
-    }
+    } else {
+        const decoded = JSON.parse(atob(data));
+
+        if (decoded !== null) {
+            player.years = Number(decoded.years);
+            player.dilation = Number(decoded.dilation);
+
+            for (let i = 0; i < dilators.length; i++) {
+                dilators[i] = structuredClone(decoded.dilators[i]);
+            };
+        };
+    };
 
     updateBuyButtons();
 }
