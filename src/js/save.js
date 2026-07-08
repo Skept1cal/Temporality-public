@@ -77,7 +77,7 @@ function clearSave() {
 function clearSave_btn_pressed() {
     let button = document.getElementById("clear-save-btn");
 
-    button.innerHTML = `<h2>Confirm?</h2>`;
+    button.innerHTML = `<h2>Are you sure?</h2>`;
     button.classList.toggle("disabled", true);
     button.classList.toggle("enabled", false);
     button.onclick = null;
