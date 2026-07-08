@@ -6,7 +6,7 @@ function disp(x) {
 
     if (x >= 1e33 || x < 0.001) {
         let value = [
-            10 ** (Math.log10(x) - Math.floor(Math.log10(x))),
+            x / (10 ** Math.floor(Math.log10(x))),
             Math.floor(Math.log10(x))
         ];
 
