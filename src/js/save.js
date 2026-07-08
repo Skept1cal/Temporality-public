@@ -163,32 +163,53 @@ async function loadFromString() {
     const button = document.getElementById("load-save-btn");
 
     button.onclick = null;
+    button.classList.toggle("disabled", true);
+    button.classList.toggle("enabled", false);
+    button.innerHTML = `<h2>Are you sure?</h2>`;
 
-    try {
-        const data = await navigator.clipboard.readText();
+    let confirmed = false;
 
-        loadSave(data);
-        saveGame();
+    setTimeout(() => {
+        confirmed = true;
+        button.onclick = async () => {
+            try {
+                button.onclick = null;
 
-        button.innerHTML = `<h2>Loaded!</h2>`;
+                const data = await navigator.clipboard.readText();
 
-        setTimeout(() => {
-            button.innerHTML = `<h2>Load from clipboard</h2>`;
+                loadSave(data);
+                saveGame();
+
+                button.innerHTML = `<h2>Loaded!</h2>`;
+
+                setTimeout(() => {
+                    button.innerHTML = `<h2>Load from clipboard</h2>`;
+                    button.onclick = loadFromString;
+                }, 2000);
+            } catch (error) {
+                console.log(`DEBUG: Failed to load save from copied string. Error: ${error}`);
+
+                button.classList.toggle("disabled", true);
+                button.classList.toggle("enabled", false);
+
+                button.innerHTML = `<h2>Failed to load save.</h2>`;
+                
+                setTimeout(() => {
+                    button.classList.toggle("disabled", false);
+                    button.classList.toggle("enabled", true);
+                    button.innerHTML = `<h2>Load from clipboard</h2>`;
+                    button.onclick = loadFromString;
+                }, 2000);
+            }
+        };
+        button.classList.toggle("disabled", false);
+        button.classList.toggle("enabled", true);
+    }, 2000);
+
+    setTimeout(() => {
+        if (!confirmed) {
             button.onclick = loadFromString;
-        }, 2000);
-    } catch (error) {
-        console.log(`DEBUG: Failed to load save from copied string. Error: ${error}`);
-
-        button.classList.toggle("disabled", true);
-        button.classList.toggle("enabled", false);
-
-        button.innerHTML = `<h2>Failed to load save.</h2>`;
-        
-        setTimeout(() => {
-            button.classList.toggle("disabled", false);
-            button.classList.toggle("enabled", true);
             button.innerHTML = `<h2>Load from clipboard</h2>`;
-            button.onclick = loadFromString;
-        }, 2000);
-    };
+        };
+    }, 5000);
 }
