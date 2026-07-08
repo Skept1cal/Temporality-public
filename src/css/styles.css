@@ -300,7 +300,8 @@ body {
     user-select: none;
 }
 
-.buy1-button.disabled, .buymax-button.disabled, .compress-button.disabled, .max-all.disabled, .compress-all.disabled, #clear-save-btn.disabled, #load-save-btn.disabled {
+.buy1-button.disabled, .buymax-button.disabled, .compress-button.disabled, .max-all.disabled, .compress-all.disabled, #clear-save-btn.disabled, #load-save-btn.disabled,
+#copy-save-btn.disabled {
     background-color: rgb(53, 0, 0);
     color: white;
     cursor: default;
@@ -310,7 +311,8 @@ body {
     transition: 0.1s ease-out;
 }
 
-.buy1-button.enabled, .buymax-button.enabled, .compress-button.enabled, .max-all.enabled, .compress-all.enabled, #clear-save-btn.enabled, #load-save-btn.enabled {
+.buy1-button.enabled, .buymax-button.enabled, .compress-button.enabled, .max-all.enabled, .compress-all.enabled, #clear-save-btn.enabled, #load-save-btn.enabled,
+#copy-save-btn.enabled {
     background-color: rgb(31, 31, 31);
     color: white;
     

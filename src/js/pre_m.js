@@ -44,7 +44,7 @@ function compressDil(ind) {
     let dilator = dilators[ind];
 
     if (dilator.amount >= dilator.compressThreshold) {
-        dilator.lastCompressMult *= Math.pow(dilator.mult, 0.1);
+        dilator.lastCompressMult *= Math.pow(dilator.mult, 1/5);
         dilator.amount = 1;
         dilator.compressions++;
 
