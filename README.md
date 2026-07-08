@@ -14,7 +14,7 @@ At 1.797 * 10<sup>308</sup> *Years*, the game currently ends.
 
 ## Dilation
 
-*Dilation* is a currency secondary to *Years*, producing the latter. The more *Dilation* you have, the faster *Years* will be produced/generated.<
+*Dilation* is a currency secondary to *Years*, producing the latter. The more *Dilation* you have, the faster *Years* will be produced/generated.
 
 *Dilation* is produced by *Dilators*.
 
