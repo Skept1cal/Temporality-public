@@ -38,5 +38,5 @@ Each new *Dilator* produced inherit the *multiplier* gained from the previous *c
 
 # Metadata
 
-- Version: v1.0.2
+- Version: v1.0.3
 - Anything I feel the need to add here will go here.

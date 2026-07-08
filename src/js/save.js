@@ -213,3 +213,5 @@ async function loadFromString() {
         };
     }, 5000);
 }
+
+window.addEventListener("beforeunload", saveGame);
