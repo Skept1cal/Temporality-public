@@ -146,6 +146,34 @@ body {
 
 
 
+#github-page-btn {
+    background-color: rgb(31, 31, 31);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    right: 1vw;
+    top: 6vw;
+
+    font-size: 0.6vw;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    height: 1.75vw;
+    width: 10vw;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
 .overline { /*The line above the main container and stuff directly related to it, such as the max all button*/
     width: 98vw;
     height: 0%;
@@ -301,7 +329,7 @@ body {
 }
 
 .buy1-button.disabled, .buymax-button.disabled, .compress-button.disabled, .max-all.disabled, .compress-all.disabled, #clear-save-btn.disabled, #load-save-btn.disabled,
-#copy-save-btn.disabled {
+#copy-save-btn.disabled, #github-page-btn.disabled {
     background-color: rgb(53, 0, 0);
     color: white;
     cursor: default;
@@ -312,7 +340,7 @@ body {
 }
 
 .buy1-button.enabled, .buymax-button.enabled, .compress-button.enabled, .max-all.enabled, .compress-all.enabled, #clear-save-btn.enabled, #load-save-btn.enabled,
-#copy-save-btn.enabled {
+#copy-save-btn.enabled, #github-page-btn.enabled {
     background-color: rgb(31, 31, 31);
     color: white;
     
@@ -324,7 +352,7 @@ body {
 }
 
 .buy1-button:hover, .buymax-button:hover, .compress-button:hover, .max-all:hover, .compress-all:hover, #save-btn:hover, #clear-save-btn:hover, #copy-save-btn:hover,
-#load-save-btn:hover {
+#load-save-btn:hover, #github-page-btn:hover {
     filter: brightness(300%);
     color: black;
     text-shadow: 0.5px 0.5px 2px black;
