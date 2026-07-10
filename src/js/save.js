@@ -1,9 +1,12 @@
 function saveGame() {
+    player.lastSavedTime = Date.now();
+    
     const data = {
         years: player.years === Infinity ? Number.MAX_VALUE : player.years,
         dilation: player.dilation,
 
-        dilators: structuredClone(dilators)
+        dilators: structuredClone(dilators),
+        lastSavedTime: player.lastSavedTime
     };
 
     const encoded = btoa(JSON.stringify(data));
@@ -15,10 +18,11 @@ function saveGame() {
 
 function tob64() {
     const data = {
-        years: player.years,
+        years: player.years === Infinity ? Number.MAX_VALUE : player.years,
         dilation: player.dilation,
 
-        dilators: structuredClone(dilators)
+        dilators: structuredClone(dilators),
+        lastSavedTime: player.lastSavedTime
     };
 
     const encoded = btoa(JSON.stringify(data));
@@ -40,7 +44,10 @@ function loadSave(data=null) {
             for (let i = 0; i < dilators.length; i++) {
                 dilators[i] = structuredClone(decoded.dilators[i]);
             };
+
+            player.lastSavedTime = decoded.lastSavedTime ?? 0;
         };
+
     } else {
         const decoded = JSON.parse(atob(data));
 
@@ -51,6 +58,8 @@ function loadSave(data=null) {
             for (let i = 0; i < dilators.length; i++) {
                 dilators[i] = structuredClone(decoded.dilators[i]);
             };
+
+            player.lastSavedTime = decoded.lastSavedTime ?? 0;
         };
     };
 
@@ -96,7 +105,7 @@ function clearSave_btn_pressed() {
     button.onclick = null;
     button.innerHTML = `<h2>Are you sure?</h2>`;
     button.classList.toggle("disabled", true);
-    button.classList.toggle("enabled", false);
+    button.classList.toggle("enabledGray", false);
     
     let confirmed = false;
 
@@ -113,7 +122,7 @@ function clearSave_btn_pressed() {
             }, 2000);
         };
         button.classList.toggle("disabled", false);
-        button.classList.toggle("enabled", true);
+        button.classList.toggle("enabledGray", true);
     }, 2000);
     
     setTimeout(() => {
@@ -144,13 +153,13 @@ async function copySave() {
         console.log(`DEBUG: Failed to copy save string to clipboard. Error: ${error}`);
 
         button.classList.toggle("disabled", true);
-        button.classList.toggle("enabled", false);
+        button.classList.toggle("enabledGray", false);
 
         button.innerHTML = `<h2>Copy failed.</h2>`;
 
         setTimeout(() => {
                 button.classList.toggle("disabled", false);
-                button.classList.toggle("enabled", true);
+                button.classList.toggle("enabledGray", true);
                 button.innerHTML = `<h2>Copy save</h2>`;
                 button.onclick = copySave;
         }, 2000);
@@ -164,7 +173,7 @@ async function loadFromString() {
 
     button.onclick = null;
     button.classList.toggle("disabled", true);
-    button.classList.toggle("enabled", false);
+    button.classList.toggle("enabledGray", false);
     button.innerHTML = `<h2>Are you sure?</h2>`;
 
     let confirmed = false;
@@ -190,20 +199,20 @@ async function loadFromString() {
                 console.log(`DEBUG: Failed to load save from copied string. Error: ${error}`);
 
                 button.classList.toggle("disabled", true);
-                button.classList.toggle("enabled", false);
+                button.classList.toggle("enabledGray", false);
 
                 button.innerHTML = `<h2>Failed to load save.</h2>`;
                 
                 setTimeout(() => {
                     button.classList.toggle("disabled", false);
-                    button.classList.toggle("enabled", true);
+                    button.classList.toggle("enabledGray", true);
                     button.innerHTML = `<h2>Load from clipboard</h2>`;
                     button.onclick = loadFromString;
                 }, 2000);
             }
         };
         button.classList.toggle("disabled", false);
-        button.classList.toggle("enabled", true);
+        button.classList.toggle("enabledGray", true);
     }, 2000);
 
     setTimeout(() => {

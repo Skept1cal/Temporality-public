@@ -1,12 +1,13 @@
 let player = {
     years: 1,
     dilation: 0,
+    lastSavedTime: Date.now(),
 };
 
 let dilators = [];
 let BASE_DILATORS = []; // This is here so the base properties of each dilator, such as cost, can be fetched after the game starts
 
-// A dilator object follows the schematic: {bought, amount, mult, compressions, cost}
+// A dilator object follows the schematic: {bought, amount, mult, compressions, cost, lastCompressMult, compressThreshold}
 function createDilator(ind) {
     const dilator = {bought: 0, amount: 0, mult: 1, compressions: 0, cost: 10 ** (ind ** 2), lastCompressMult: 1, compressThreshold: 1e12 ** (ind / 10 + 1)};
     dilators.push(dilator);

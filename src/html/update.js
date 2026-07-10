@@ -33,5 +33,6 @@ function updateBuyButtons() {
     for (let i = 0; i < dilators.length; i++) {
         document.getElementById(`dil${i + 1}-buy`).innerHTML = `<h2>Buy 1 (${disp(dilators[i].bought)})</h2>`;
         document.getElementById(`dil${i + 1}-buymax`).innerHTML = `<h2>Buy max (${disp(dilators[i].bought)})</h2>`;
+        document.getElementById(`dil${i + 1}-compress-button`).innerHTML = `<h2>Compress (${disp(dilators[i].compressions)})</h2>`;
     };
 }

@@ -1,4 +1,4 @@
-let last = Date.now();
+let last = performance.now();
 let is_first_iteration_after_inf = true;
 
 function updatePre_m(diff) {
@@ -7,7 +7,7 @@ function updatePre_m(diff) {
 }
 
 function loop() {
-    const now = Date.now();
+    const now = performance.now();
     const diff = (now - last) / 1000;
 
     updatePre_m(diff);
@@ -17,18 +17,32 @@ function loop() {
         is_first_iteration_after_inf = false;
 
         updateBuyButtons();
-    }
+    };
 
     last = now;
 }
 
-try {
-    loadSave();
-} catch (err) {
-    console.log(`DEBUG: Failed to load save file. Error: ${err}\n\nNOTE: This is normal if there is no available save file. Savefile: ${localStorage.getItem("temporality_save_file")}`);
-} finally {
-    saveGame();
-}
+window.addEventListener("load", () => {
+    if (!localStorage.getItem("temporality_save_file")) {
+        saveGame();
+    };
+
+    try {
+        loadSave();
+
+        updatePre_m((player.lastSavedTime !== 0) ? (Date.now() - player.lastSavedTime) / 1000 : 0);
+        updateHTML();
+
+        if (isInfinite(player.years) && is_first_iteration_after_inf) {
+            is_first_iteration_after_inf = false;
+
+            updateBuyButtons();
+        };
+
+    } catch (err) {
+        console.log(`DEBUG: Failed to load save file. Error: ${err}\n\n Savefile: ${localStorage.getItem("temporality_save_file")}`);
+    };
+});
 
 setInterval(loop, 16.67);
 

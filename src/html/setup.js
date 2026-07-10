@@ -27,7 +27,7 @@ for (let i = 1; i <= dilators.length; i++) {
     const div = document.createElement("div");
 
     div.innerHTML = `<h2>Buy 1 (${disp(dilators[i - 1].bought)})</h2>`;
-    div.className = "buy1-button";
+    div.className = "buy1-button hover";
     div.id = `dil${i}-buy`;
     div.onclick = function() {buyDil_single(i - 1);};
 
@@ -40,7 +40,7 @@ for (let i = 1; i <= dilators.length; i++) {
     const div = document.createElement("div");
 
     div.innerHTML = `<h2>Buy max (${disp(dilators[i - 1].bought)})</h2>`;
-    div.className = "buymax-button";
+    div.className = "buymax-button hover";
     div.id = `dil${i}-buymax`;
     div.onclick = () => {
         pre_m_buymax(i - 1);
@@ -96,9 +96,9 @@ const compression_container = document.getElementById("compress-buttons-div");
 for (let i = 1; i <= dilators.length; i++) {
     const div = document.createElement("div");
 
-    div.innerHTML = `<h2>Compress</h2>`;
-    div.className = "compress-button";
-    div.id = `dil${i}-compress-button`
+    div.innerHTML = `<h2>Compress (${disp(dilators[i - 1].compressions)})</h2>`;
+    div.className = "compress-button hover";
+    div.id = `dil${i}-compress-button`;
     div.onclick = () => {
         compressDil(i - 1);
     };

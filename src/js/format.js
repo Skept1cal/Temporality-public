@@ -2,7 +2,7 @@ function disp(x) {
 
     if (isInfinite(x) || isInfinite(player.years)) {return "Infinity"};
 
-    if (x === 0) return "0.00";
+    if (x === 0) return "0.000";
 
     if (x >= 1e33 || x < 0.001) {
         let value = [

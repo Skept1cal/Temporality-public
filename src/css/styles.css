@@ -8,7 +8,7 @@ body {
 
 
 .resources-div {
-    width: 50%;
+    width: 50vw;
     
     margin: -1vw auto;
 
@@ -40,7 +40,7 @@ body {
 
 
 
-#save-btn {
+.save-btn, .clear-save-btn, .copy-save-btn, .load-save-btn, .github-page-btn {
     background-color: rgb(31, 31, 31);
     color: white;
 
@@ -48,128 +48,60 @@ body {
     justify-content: center;
     flex-direction: column;
 
+    font-size: 0.6vw;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 2px white;
+
+    border: 2px solid rgb(78, 78, 78);
+    border-radius: 3px;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.save-btn {
     position: absolute;
     right: 1vw;
     top: 1vw;
 
-    font-size: 0.6vw;
-    text-align: center;
-    text-shadow: 0.5px 0.5px 2px white;
-
     height: 1.75vw;
     width: 8vw;
-
-    border: 2px solid rgb(78, 78, 78);
-    border-radius: 3px;
-
-    cursor: pointer;
-    user-select: none;
 }
 
-#clear-save-btn {
-    background-color: rgb(31, 31, 31);
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
+.clear-save-btn {
     position: absolute;
     right: 10vw;
     top: 3.5vw;
 
-    font-size: 0.6vw;
-    text-align: center;
-    text-shadow: 0.5px 0.5px 2px white;
-
     height: 1.75vw;
     width: 8vw;
-
-    border: 2px solid rgb(78, 78, 78);
-    border-radius: 3px;
-
-    cursor: pointer;
-    user-select: none;
 }
 
-#copy-save-btn {
-    background-color: rgb(31, 31, 31);
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
+.copy-save-btn {
     position: absolute;
     right: 1vw;
     top: 3.5vw;
 
-    font-size: 0.6vw;
-    text-align: center;
-    text-shadow: 0.5px 0.5px 2px white;
-
     height: 1.75vw;
     width: 8vw;
-
-    border: 2px solid rgb(78, 78, 78);
-    border-radius: 3px;
-
-    cursor: pointer;
-    user-select: none;
 }
 
-#load-save-btn {
-    background-color: rgb(31, 31, 31);
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
+.load-save-btn {
     position: absolute;
     right: 10vw;
     top: 1vw;
-
-    font-size: 0.6vw;
-    text-align: center;
-    text-shadow: 0.5px 0.5px 2px white;
 
     height: 1.75vw;
     width: 12vw;
-
-    border: 2px solid rgb(78, 78, 78);
-    border-radius: 3px;
-
-    cursor: pointer;
-    user-select: none;
 }
 
-
-
-#github-page-btn {
-    background-color: rgb(31, 31, 31);
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
+.github-page-btn {
     position: absolute;
     right: 1vw;
     top: 6vw;
 
-    font-size: 0.6vw;
-    text-align: center;
-    text-shadow: 0.5px 0.5px 2px white;
-
     height: 1.75vw;
     width: 10vw;
-
-    border: 2px solid rgb(78, 78, 78);
-    border-radius: 3px;
-
-    cursor: pointer;
-    user-select: none;
 }
 
 
@@ -208,7 +140,7 @@ body {
 
 }
 
-.buy1-buttons { /*Contains the buttons for buying singles*/
+.buy1-buttons, .buymax-buttons, .compress-buttons { /*Contains the buttons for buying singles, max, and compression*/
     background-color: black;
     color: white;
 
@@ -216,43 +148,37 @@ body {
     justify-content: center;
     flex-direction: column;
 
-    position: absolute;
-    right: 10.5%;
-
-    height: 95%;
-    width: 10%;
+    height: 30vw;
+    width: 10vw;
 
     border: 2px solid white;
     border-radius: 3px;
+
+    z-index: 1;
+}
+
+.buy1-buttons {
+    position: absolute;
+    right: 10.5vw;
 
     border-right: 0px;
-
-    z-index: 1;
 }
 
-.buymax-buttons { /*Contains the buttons for buying max*/
-    background-color: black;
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
+.buymax-buttons {
     position: absolute;
-    right: 0.6%;
-
-    height: 95%;
-    width: 10%;
-
-    border: 2px solid white;
-    border-radius: 3px;
+    right: 0.6vw;
 
     border-left: 0px;
-
-    z-index: 1;
 }
 
-.buy1-button, .buymax-button { /*These are the buttons for buying singles and buying max*/
+.compress-buttons {
+    position: absolute;
+    left: 0.6vw;
+
+    border-right: 0px;
+}
+
+.buy1-button, .buymax-button, .compress-button { /*These are the buttons for buying singles and buying max*/
     background-color: rgb(31, 31, 31);
     color: white;
 
@@ -260,12 +186,12 @@ body {
     justify-content: center;
     flex-direction: column;
 
-    font-size: 0.45vw;
+    font-size: 0.445vw;
     text-align: center;
     padding: 0.61vw;
     text-shadow: 0.5px 0.5px 2px white;
 
-    height: 1.75%;
+    height: 0.525vw;
 
     border: 2px solid rgb(78, 78, 78);
     border-radius: 3px;
@@ -276,7 +202,9 @@ body {
     user-select: none;
 }
 
-.max-all {
+
+
+.max-all, .compress-all {
     background-color: rgb(31, 31, 31);
     color: white;
 
@@ -285,7 +213,6 @@ body {
     flex-direction: column;
 
     position: absolute;
-    right: 1vw;
     bottom: 34vw;
 
     font-size: 0.6vw;
@@ -300,47 +227,41 @@ body {
 
     cursor: pointer;
     user-select: none;
+}
+
+.max-all {
+    right: 1vw;
 }
 
 .compress-all {
-    background-color: rgb(31, 31, 31);
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    position: absolute;
     left: 1vw;
-    bottom: 34vw;
-
-    font-size: 0.6vw;
-    text-align: center;
-    text-shadow: 0.5px 0.5px 2px white;
-
-    height: 1.75vw;
-    width: 12vw;
-
-    border: 2px solid rgb(78, 78, 78);
-    border-radius: 3px;
-
-    cursor: pointer;
-    user-select: none;
 }
 
-.buy1-button.disabled, .buymax-button.disabled, .compress-button.disabled, .max-all.disabled, .compress-all.disabled, #clear-save-btn.disabled, #load-save-btn.disabled,
-#copy-save-btn.disabled, #github-page-btn.disabled {
+
+
+.disabled {
     background-color: rgb(53, 0, 0);
     color: white;
+
     cursor: default;
 
     border: 2px solid rgb(117, 0, 0);
 
-    transition: 0.1s ease-out;
+    transition: all 0.1s ease-out;
 }
 
-.buy1-button.enabled, .buymax-button.enabled, .compress-button.enabled, .max-all.enabled, .compress-all.enabled, #clear-save-btn.enabled, #load-save-btn.enabled,
-#copy-save-btn.enabled, #github-page-btn.enabled {
+.enabledGreen {
+    background-color: rgb(0, 40, 0);
+    color: white;
+    
+    cursor: pointer;
+
+    border: 2px solid rgb(0, 100, 0);
+
+    transition: all 0.1s ease-out;
+}
+
+.enabledGray {
     background-color: rgb(31, 31, 31);
     color: white;
     
@@ -348,20 +269,20 @@ body {
 
     border: 2px solid rgb(78, 78, 78);
 
-    transition: 0.1s ease-out;
+    transition: all 0.1s ease-out;
 }
 
-.buy1-button:hover, .buymax-button:hover, .compress-button:hover, .max-all:hover, .compress-all:hover, #save-btn:hover, #clear-save-btn:hover, #copy-save-btn:hover,
-#load-save-btn:hover, #github-page-btn:hover {
+.hover:hover {
     filter: brightness(300%);
     color: black;
     text-shadow: 0.5px 0.5px 2px black;
 
-    transition: 0.1s ease-out;
+    transition: all 0.1s ease-out;
 }
 
 
-.dilator-costs {
+
+.dilator-costs, .dilator-amounts {
     background-color: rgba(0, 0, 0, 0);
     color: white;
 
@@ -369,16 +290,25 @@ body {
     justify-content: center;
     flex-direction: column;
 
-    position: absolute;
-    right: 23.5%;
-
-    height: 95%;
-    width: 15%;
+    height: 30vw;
 
     z-index: 0;
 }
 
-.dilator-cost-label {
+.dilator-costs {
+    position: absolute;
+    right: 23.25vw;
+    width: 15vw;
+}
+
+.dilator-amounts {
+    position: absolute;
+    left: 27.75vw;
+
+    width: 29.75vw;
+}
+
+.dilator-cost-label, .dilator-amount-label {
     background-color: rgba(0, 0, 0, 0);
     color: white;
 
@@ -391,7 +321,7 @@ body {
     padding: 0.61vw;
     text-shadow: 0.5px 0.5px 2px white;
 
-    height: 2.1%;
+    height: 0.6vw;
 
     margin: 0.485vw;
 
@@ -409,10 +339,10 @@ body {
     flex-direction: column;
 
     position: absolute;
-    left: 10.5%;
+    left: 10.5vw;
 
-    height: 95%;
-    width: 17%;
+    height: 30vw;
+    width: 16.9vw;;
 
     border: 2px solid white;
     border-radius: 3px;
@@ -435,98 +365,12 @@ body {
     padding: 0.61vw;
     text-shadow: 0.5px 0.5px 2px white;
 
-    height: 1.75%;
+    height: 0.525vw;
 
     border: 2px solid rgb(78, 78, 78);
     border-radius: 3px;
 
     margin: 0.42vw;
 
-    user-select: none;
-}
-
-
-
-.dilator-amounts { /*Contains the labels displaying the dilator amounts*/
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    position: absolute;
-    left: 28%;
-
-    height: 95%;
-    width: 30%;
-
-    z-index: 0;
-}
-
-.dilator-amount-label { /*Displays the dilator's amount*/
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    font-size: 0.6vw;
-    text-align: left;
-    padding: 0.61vw;
-    text-shadow: 0.5px 0.5px 2px white;
-
-    height: 2.1%;
-
-    margin: 0.485vw;
-
-    user-select: none;
-}
-
-
-
-.compress-buttons { /*Contains the buttons for compression*/
-    background-color: black;
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    position: absolute;
-    left: 0.6%;
-
-    height: 95%;
-    width: 10%;
-
-    border: 2px solid white;
-    border-radius: 3px;
-
-    border-right: 0px;
-
-    z-index: 1;
-}
-
-.compress-button { /*Compresses the respective dilator, making it significantly stronger.*/
-    background-color: rgb(31, 31, 31);
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    font-size: 0.6vw;
-    text-align: center;
-    padding: 0.61vw;
-    text-shadow: 0.5px 0.5px 2px white;
-
-    height: 1.75%;
-
-    border: 2px solid rgb(78, 78, 78);
-    border-radius: 3px;
-    margin: 0.42vw;
-
-    cursor: pointer;
     user-select: none;
 }
